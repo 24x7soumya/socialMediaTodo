@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const todoSchema = new mongoose.Schema({
-	text: {
+	content: {
 		type: String,
 		trim: true,
 		required: true

@@ -3,7 +3,7 @@ const { objectId } = require('./custom.validation');
 
 const createTodo = {
 	body: Joi.object().keys({
-		text: Joi.string().required(),
+		content: Joi.string().required(),
 		status: Joi.string().required().valid('pending', 'ongoing', 'done').default('pending'),
 	}),
 };
@@ -28,7 +28,7 @@ const updateTodo = {
 	}),
 	body: Joi.object()
 		.keys({
-			text: Joi.string(),
+			content: Joi.string(),
 			status: Joi.string().valid('pending', 'ongoing', 'done').default('pending'),
 		})
 		.min(1),

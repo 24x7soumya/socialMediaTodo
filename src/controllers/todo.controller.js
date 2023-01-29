@@ -10,7 +10,6 @@ const createTodo = catchAsync(async (req, res) => {
 });
 
 const getTodos = catchAsync(async (req, res) => {
-	const filter = pick(req.query, ['name', 'role']);
 	const options = pick(req.query, ['sortBy', 'limit', 'page']);
 	const result = await todoService.queryTodos(filter, options);
 	res.send(result);
